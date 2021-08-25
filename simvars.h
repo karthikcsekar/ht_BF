@@ -1,25 +1,24 @@
+#include <iostream>
+using namespace std;
 double temp;
 
 // Number of cells 
-int     ncells;
+#define ncells 202
 
 // Maximum Height of the BF
-double  bfmaxh;
+double      bfmaxh;
 
 // Height dimension
-double  var_zz;
+double      var_zz[ncells];
 
 // Variables for gas and solid temperatures
-double  var_Tg, var_Ts;
+double      var_Tg[ncells], var_Ts[ncells];
 
 // Variables for gas and solid temperatures: Boundary values
-double  Tg_bot, Tg_top;
-double  Ts_bot, Ts_top;
+double      Tg_bot, Tg_top;
+double      Ts_bot, Ts_top;
 
 void initialize(){
-
-    // Redefining total number of cells by adding 2 ghost cells
-    ncells          = ncells + 2;
 
     // Initializing gas and solid temperature variables 
     Tg_top          = 400.0;            // Top gas temperature 
@@ -29,6 +28,6 @@ void initialize(){
 
     // Initializing gas and solid temperature variables 
     for (int i=0; i<ncells; i++){
-        
+        var_zz[i] = 1;
     }
 }
