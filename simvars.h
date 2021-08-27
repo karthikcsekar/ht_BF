@@ -3,7 +3,7 @@ using namespace std;
 double temp;
 
 // Number of cells 
-#define ncells 202
+#define ncells 201
 
 // Maximum Height of the BF
 double      bfmaxh;
@@ -20,14 +20,21 @@ double      Ts_bot, Ts_top;
 
 void initialize(){
 
-    // Initializing gas and solid temperature variables 
-    Tg_top          = 400.0;            // Top gas temperature 
-    Tg_bot          = 1600.0;           // Bottom gas temperature
-    Ts_top          = 400.0;            // Top solid temperature
-    Ts_bot          = 1600.0;           // Bottom solid temperature
+    // Initializing blast furnace height 
+    bfmaxh                  = 25;
 
     // Initializing gas and solid temperature variables 
-    for (int i=0; i<ncells; i++){
-        var_zz[i] = 1;
+    Tg_top                  = 400.0;            // Top gas temperature 
+    Tg_bot                  = 1600.0;           // Bottom gas temperature
+    Ts_top                  = 400.0;            // Top solid temperature
+    Ts_bot                  = 1600.0;           // Bottom solid temperature
+
+    // Initializing gas and solid temperature variables 
+    for (int i=1; i<=ncells-1; i++){
+        var_zz[i] = (i-1)*bfmaxh/(ncells-2-1);
+        var_Tg[i] = 0;
+        var_Ts[i] = 0;        
     }
+    var_zz[0]               = -bfmaxh/(ncells-2);
+    var_zz[ncells-1]        = var_zz[ncells-2] + bfmaxh/(ncells-2-1);
 }
