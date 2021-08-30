@@ -97,4 +97,9 @@ void initialize(){
         var_Tg[i] = 0.5*(Tg_top + Tg_bot);
         var_Ts[i] = 0.5*(Ts_top + Ts_bot);        
     }
+    // Initializing gas and solid temperature variables - an average value for inital guess
+    for (int i=1; i<=ncells-1; i++){
+        var_Tg[i] = 0.5*(Tg_top + Tg_bot);
+        var_Ts[i] = 0.5*(Ts_top + Ts_bot);        
+    }
 }
