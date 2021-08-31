@@ -54,6 +54,11 @@ double matATs[ncells][ncells];
 double rhs_Tg[ncells];
 double rhs_Ts[ncells];
 
+// Tolerance limits
+double tol;
+double tolS;
+double tolQ;
+
 //Error variable for 1st Loop - no source term :: for gas and solid temperature variables
 double err1[ncells];
 double err2[ncells];
@@ -97,4 +102,10 @@ void initialize(){
         var_Tg[i] = 0.5*(Tg_top + Tg_bot);
         var_Ts[i] = 0.5*(Ts_top + Ts_bot);        
     }
+
+    // Tolerance limits
+    tol         = 1E-6;
+    tolS        = 1E-6;
+    tolQ        = 1E-6;
+
 }
