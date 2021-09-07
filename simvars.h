@@ -107,5 +107,4 @@ void initialize(){
     tol         = 1E-6;
     tolS        = 1E-6;
     tolQ        = 1E-6;
-
 }
