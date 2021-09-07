@@ -7,7 +7,7 @@ double temp;
 
 // PHYSICAL & THERMODYNAMIC PROPERTIES 
 // Height dimension
-double      var_zz[ncells];
+double var_zz[ncells];
 
 // Variables for gas and solid temperatures 
 double var_Tg[ncells];
