@@ -90,6 +90,7 @@ double * diffusivity(double var_Tg[ncells]){
     }
     return diffiv;
 }
+// ADD HERE !!!!
 
 // CHEMICAL REACTION PROPERTIES 
 /* Here reaction rates and heats of reactions are calculated 
